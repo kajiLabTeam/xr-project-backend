@@ -1,2 +1,3 @@
 docker/minio/data/
+docker/postgres/data/
 .env
