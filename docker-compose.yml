@@ -1,4 +1,4 @@
-version: '3.9'
+version: "3.9"
 
 services:
   minio:
@@ -19,7 +19,7 @@ services:
     container_name: xr_postgres
     image: postgres:15
     restart: always
-    ports: 
+    ports:
       - "5432:5432"
     volumes:
       - ./docker/postgres/init:/docker-entrypoint-initdb.d
@@ -27,3 +27,10 @@ services:
     environment:
       POSTGRES_USER: ${POSTGRES_USER}
       POSTGRES_PASSWORD: ${POSTGRES_PASSWORD}
+
+  tunnel:
+    restart: always
+    image: cloudflare/cloudflared
+    command: tunnel run
+    environment:
+      - TUNNEL_TOKEN=${TUNNEL_TOKEN}
