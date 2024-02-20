@@ -80,6 +80,7 @@ CREATE TABLE wifis (
     spot_id UUID REFERENCES spots(id)
 );
 
+
 CREATE TABLE bles (
     id UUID DEFAULT uuid_generate_v4() PRIMARY KEY,
     name VARCHAR(50),
@@ -88,6 +89,23 @@ CREATE TABLE bles (
     updated_at TIMESTAMP WITH TIME ZONE,
     deleted_at TIMESTAMP WITH TIME ZONE,
     spot_id UUID REFERENCES spots(id)
+);
+
+CREATE TABLE wifi_thresholds (
+    id UUID DEFAULT uuid_generate_v4() PRIMARY KEY,
+    threshold INT NOT NULL,
+    created_at TIMESTAMP WITH TIME ZONE DEFAULT CURRENT_TIMESTAMP,
+    updated_at TIMESTAMP WITH TIME ZONE,
+    wifi_id UUID REFERENCES wifis(id)
+);
+
+
+CREATE TABLE ble_thresholds (
+    id UUID DEFAULT uuid_generate_v4() PRIMARY KEY,
+    threshold INT NOT NULL,
+    created_at TIMESTAMP WITH TIME ZONE DEFAULT CURRENT_TIMESTAMP,
+    updated_at TIMESTAMP WITH TIME ZONE,
+    ble_id UUID REFERENCES bles(id)
 );
 
 CREATE TABLE fp_models (
