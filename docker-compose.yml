@@ -29,8 +29,10 @@ services:
       POSTGRES_PASSWORD: ${POSTGRES_PASSWORD}
 
   tunnel:
+    container_name: xr_minio_tunnel
     restart: always
     image: cloudflare/cloudflared
     command: tunnel run
     environment:
       - TUNNEL_TOKEN=${TUNNEL_TOKEN}
+
