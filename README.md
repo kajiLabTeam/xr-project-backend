@@ -20,8 +20,6 @@
 cp .env.example .env
 ```
 
-ローカルで実行する場合、`MINIO_ROOT_USER`と`MINIO_ROOT_PASSWORD`は任意の値で設定してください
-
 ### コンテナを起動
 
 ```bash
