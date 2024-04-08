@@ -1,7 +1,7 @@
 # XR プロジェクト外部サービスコンテナリポジトリ
 
 > [!IMPORTANT]
-> 環境変数は[こちらから](https://kjlb.esa.io/posts/5186)確認してください
+> 環境変数は[こちらから](https://kjlb.esa.io/posts/5187)確認してください
 
 
 
